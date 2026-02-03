@@ -392,6 +392,46 @@ section {
     object-fit: cover;
 }
 
+/* Instagram Placeholder Styles */
+.artist-image-link {
+    display: block;
+    text-decoration: none;
+}
+
+.instagram-placeholder {
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.instagram-icon-large {
+    width: 60px;
+    height: 60px;
+    color: white;
+}
+
+.instagram-username {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.instagram-hint {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+}
+
+.artist-instagram.disabled {
+    background: #ccc;
+    pointer-events: none;
+}
+
 .artist-info {
     padding: 25px;
     text-align: center;
