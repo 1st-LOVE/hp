@@ -787,3 +787,25 @@ section {
 .artist-card:nth-child(7) { animation-delay: 0.4s; }
 .artist-card:nth-child(8) { animation-delay: 0.45s; }
 .artist-card:nth-child(9) { animation-delay: 0.5s; }
+
+.shop-details {
+    margin-top: 30px;
+    text-align: left;
+    background: var(--color-primary-light);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shop-info {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.8;
+}
+
+.shop-info strong {
+    color: var(--color-primary-dark);
+    font-size: 1.05rem;
+}
