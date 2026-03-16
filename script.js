@@ -76,3 +76,34 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
+    // Countdown Timer
+    const countdownDate = new Date("April 17, 2026 11:00:00").getTime();
+
+    const updateCountdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+        const secondsEl = document.getElementById("seconds");
+
+        if (daysEl) daysEl.innerHTML = days.toString().padStart(2, '0');
+        if (hoursEl) hoursEl.innerHTML = hours.toString().padStart(2, '0');
+        if (minutesEl) minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+        if (secondsEl) secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(updateCountdown);
+            const countdownEl = document.getElementById("countdown");
+            if (countdownEl) {
+                countdownEl.innerHTML = "<p class='countdown-finished'>Event is Now Live!</p>";
+            }
+        }
+    }, 1000);
