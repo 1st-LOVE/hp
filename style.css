@@ -570,6 +570,30 @@ section {
     margin-bottom: 15px;
 }
 
+.workshop-tag.soldout {
+    background: #E74C3C;
+    font-size: 0.9rem;
+    padding: 8px 20px;
+}
+
+.workshop-card.is-soldout {
+    position: relative;
+}
+
+.workshop-card.is-soldout::after {
+    content: 'SOLD OUT';
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: #E74C3C;
+    color: white;
+    padding: 10px 50px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
 .workshop-info h3 {
     font-size: 1.8rem;
     margin-bottom: 5px;
