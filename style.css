@@ -878,3 +878,126 @@ section {
         font-size: 1.5rem;
     }
 }
+
+/* Photo Event Section */
+.photo-event {
+    background: #FFF5F7;
+}
+
+.photo-event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.photo-event-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.photo-event-images img {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.photo-event-images img:hover {
+    transform: scale(1.02);
+}
+
+.photo-event-content {
+    padding: 20px;
+}
+
+.photo-event-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.photo-event-artist {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo-event-instagram {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.photo-event-description {
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.photo-event-details {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.photo-event-details h4 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--color-primary-light);
+    padding-bottom: 10px;
+}
+
+.photo-event-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.photo-event-details li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.photo-event-details li::before {
+    content: '📷';
+    position: absolute;
+    left: 0;
+}
+
+.photo-event-notes {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.photo-event-notes p {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .photo-event-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-event-images {
+        order: 2;
+    }
+    
+    .photo-event-content {
+        order: 1;
+        text-align: center;
+    }
+    
+    .photo-event-artist {
+        justify-content: center;
+    }
+    
+    .photo-event-details {
+        text-align: left;
+    }
+}
