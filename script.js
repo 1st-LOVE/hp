@@ -77,4 +77,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    // Countdown Timer removed as event has finished
+    // Slideshow Logic
+    const photos = [
+        "P4177992 (1).JPG", "P4177993 (1).JPG", "P4177994 (1).JPG", "P4177995 (1).JPG", "P4177996 (1).JPG",
+        "P4177997 (1).JPG", "P4177998 (1).JPG", "P4177999 (1).JPG", "P4178000 (1).JPG", "P4178001 (1).JPG",
+        "P4178002 (1).JPG", "P4178003 (1).JPG", "P4178004 (1).JPG", "P4178005 (1).JPG", "P4178006 (1).JPG",
+        "P4178007 (1).JPG", "P4178008 (1).JPG", "P4178009 (1).JPG", "P4178010 (1).JPG", "P4178011 (1).JPG",
+        "P4178012 (1).JPG", "P4178013 (1).JPG", "P4178014 (1).JPG", "P4178015 (1).JPG", "P4178016 (1).JPG",
+        "P4178017 (1).JPG", "P4178018 (1).JPG", "P4178019 (1).JPG", "P4178020 (1).JPG", "P4178021 (1).JPG"
+    ];
+
+    const wrapper = document.getElementById('slides-wrapper');
+    if (wrapper) {
+        photos.forEach(photo => {
+            const slide = document.createElement('div');
+            slide.className = 'slide';
+            slide.innerHTML = `<img src="images/${photo}" alt="Event Photo" loading="lazy">`;
+            wrapper.appendChild(slide);
+        });
+
+        let currentIndex = 0;
+        const totalSlides = photos.length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) currentIndex = 0;
+            else if (index < 0) currentIndex = totalSlides - 1;
+            else currentIndex = index;
+            
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        document.getElementById('next-slide').addEventListener('click', () => showSlide(currentIndex + 1));
+        document.getElementById('prev-slide').addEventListener('click', () => showSlide(currentIndex - 1));
+
+        // Auto play
+        setInterval(() => showSlide(currentIndex + 1), 3000);
+    }
